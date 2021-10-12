@@ -12,6 +12,7 @@ Users can find listings based off of filters to save time and find exactly what 
 Frond End: https://github.com/faiththao/meadow-app-js
 Back End: https://github.com/faiththao/meadow-app-rails
 
+
 # The Models
 ![models2 0](https://user-images.githubusercontent.com/79170369/136986329-6b2b4d67-5b4f-4f40-b3e5-8b5f1c0ebd6e.jpg)
 # User
@@ -42,6 +43,8 @@ A Saved Listing belongs to user and listing
 - listing_id
 
 # API Documentation
+![Apidoc](https://user-images.githubusercontent.com/79170369/136994885-f881134c-3142-4b67-85a0-d9da6e04cc91.png)
+
 GET /me to sessions#create to login
 DELETE "logout" to sessions#destroy to logout
 
