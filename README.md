@@ -6,6 +6,9 @@ Users can login and sign up to save the homes that they are interested in and al
 Users can create listings to help other families and individuals.
 Users can find listings based off of filters to save time and find exactly what they are looking for.
 
+Frond End: https://github.com/faiththao/meadow-app-js
+Back End: https://github.com/faiththao/meadow-app-rails
+
 # The Models
 ![models2 0](https://user-images.githubusercontent.com/79170369/136986329-6b2b4d67-5b4f-4f40-b3e5-8b5f1c0ebd6e.jpg)
 # User
