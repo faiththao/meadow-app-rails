@@ -41,6 +41,7 @@ DELETE "logout" to sessions#destroy to logout
 
 POST /signup to users#create to create a user
 Returns a JSON 
+
 {
   id: 1
   email: "this.email@gmail.com"
@@ -54,6 +55,7 @@ Returns a JSON
 
 POST listings 
 Returns a JSON
+
 {
   id: 1
   user_id: 1
