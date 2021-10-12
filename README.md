@@ -14,7 +14,8 @@ Back End: https://github.com/faiththao/meadow-app-rails
 
 
 # The Models
-![models2 0](https://user-images.githubusercontent.com/79170369/136986329-6b2b4d67-5b4f-4f40-b3e5-8b5f1c0ebd6e.jpg)
+![model3 1](https://user-images.githubusercontent.com/79170369/137021361-e631ca41-b35a-4b81-8173-92f9a55f37b2.png)
+
 # User
 A User has many saved_listings through listings
 - id
