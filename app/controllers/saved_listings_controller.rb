@@ -1,0 +1,2 @@
+class SavedListingsController < ApplicationController
+end
