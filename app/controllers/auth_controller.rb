@@ -18,6 +18,7 @@ class AuthController < ApplicationController
         render json: user
     end
 
+
     private 
 
     def user_login_params

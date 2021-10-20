@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :saved_listings, only: [:show]
   resources :listings, only: [:index, :create, :update]
+  # resources :users, only: [:show, :create]
+
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
   post "/login", to: "auth#create"

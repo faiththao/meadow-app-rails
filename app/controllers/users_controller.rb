@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: :create
+    skip_before_action :authorized, only: :create
 
     def create
       user = User.create!(user_params)
-      session[:user_id] = user.id
-      render json: user, status: :created
+      if user.valid?
+        payload = {user_id: user.id}
+        token = encode_token(payload)
+        render json: { user: user, status: :created, jwt: token}
+      else
+        render json: { error: 'failed to create user', status: :not_acceptable}
+      end
     end
 
     def show

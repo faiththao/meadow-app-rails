@@ -30,3 +30,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Encoding and decoding tokens available
 gem 'jwt', '~> 2.2'
+
+gem "active_model_serializers", "~> 0.10.10"
