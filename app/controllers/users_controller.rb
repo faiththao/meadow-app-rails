@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
     def create
       user = User.create!(user_params)
+      puts //////////////////////////////////////////
       if user.valid?
         # payload = {user_id: user.id}
         # token = encode_token(payload)
@@ -13,7 +14,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @current_user
+        user = current_user
+        render json: user, only: [:email, :first_name, :last_name, :birthdate, :phone]
+        # puts render json: user, only: [:email, :first_name, :last_name, :birthdate, :phone]
+        # byebug
+
     end
 
     def password=(new_password)

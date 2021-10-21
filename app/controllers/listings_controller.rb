@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     end
 
     def show 
-        listings = Listing.find_by(id: params[:user_id])
+        listings = current_user.listings.find_by(id: params[:user_id])
     end
 
     def create
