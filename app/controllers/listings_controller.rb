@@ -1,12 +1,17 @@
 class ListingsController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     skip_before_action :authorized, only: [:index]
 
     def index 
         render json: Listing.all
     end
 
+    def show 
+        listings = Listing.find_by(id: params[:user_id])
+    end
+
     def create
-        listing = @current_user.listings.create!(listing_params)
+        listing = current_user.listings.create!(listing_params)
         render json: listing, status: :created
     end
 
@@ -23,6 +28,10 @@ class ListingsController < ApplicationController
     private
 
     def listing_params
-        params.permit(:address, :description, :bedrooms, :bathrooms, :parking, :ac, :washer_dryer, :lease)
+        params.permit(:address, :description, :bedrooms, :bathrooms, :parking, :ac, :washer_dryer, :lease, :img_url)
+    end
+
+    def render_unprocessable_entity_response(exception)
+        render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
     end
 end
