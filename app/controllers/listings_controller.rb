@@ -7,7 +7,10 @@ class ListingsController < ApplicationController
     end
 
     def show 
-        listings = current_user.listings.find_by(id: params[:user_id])
+        listings = current_user.listings
+        puts listings
+        render json: listings
+        
     end
 
     def create
