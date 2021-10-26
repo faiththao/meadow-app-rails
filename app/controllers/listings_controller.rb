@@ -8,9 +8,7 @@ class ListingsController < ApplicationController
 
     def show 
         listings = current_user.listings
-        puts listings
         render json: listings
-        
     end
 
     def create

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def create
       user = User.create!(user_params)
-      puts //////////////////////////////////////////
+  
       if user.valid?
         # payload = {user_id: user.id}
         # token = encode_token(payload)
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :birthdate, :phone_number)
+        params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :birthdate, :phone)
     end
 
     def dumb_hash(input)
