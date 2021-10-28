@@ -5,10 +5,10 @@ class AuthController < ApplicationController
         @user = User.find_by(email: user_login_params[:email])
         
         if @user && @user.authenticate(user_login_params[:password])
-            puts @user && @user.authenticate(user_login_params[:password])
-        @token = encode_token({ user_id: @user.id })   
-        puts @token
-        render json: { user: UserSerializer.new(@user), jwt: @token }, status: :accepted   
+            # puts @user && @user.authenticate(user_login_params[:password])
+        token = encode_token({ user_id: @user.id })   
+        # puts @token
+        render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted   
         else 
         render json: { message: 'Invalid username or password' }, status: :unauthorized
         end
@@ -16,7 +16,7 @@ class AuthController < ApplicationController
 
     def auto_login
         @token = params[:token]
-        user = User.find(JWT.decode(@token, "put your password here", true, algorithm: 'HS256')[0]["user_id"])
+        user = User.find(JWT.decode(token, "put your password here", true, algorithm: 'HS256')[0]["user_id"])
         render json: user
     end
 
