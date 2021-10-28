@@ -5,9 +5,9 @@ class UsersController < ApplicationController
       user = User.create!(user_params)
   
       if user.valid?
-        # payload = {user_id: user.id}
-        # token = encode_token(payload)
-        render json: { user: user, status: :created, jwt: token}
+        payload = {user_id: user.id}
+        @token = encode_token(payload)
+        render json: { user: user, status: :created, jwt: @token}
       else
         render json: { error: 'failed to create user', status: :not_acceptable}
       end
